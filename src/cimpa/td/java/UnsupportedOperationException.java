@@ -1,6 +1,6 @@
 package cimpa.td.java;
 
-public class UnsupportedOperationException extends RuntimeException{
+public class UnsupportedOperationException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 

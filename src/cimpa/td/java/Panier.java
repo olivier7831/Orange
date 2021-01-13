@@ -6,9 +6,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Panier {
-	public static String negativeCapacity = "Negative capacity not allowed";
-	public static String unsuffientCapacity = "Unsuffient capacity";
-	public static String emptyCart = "Empty cart";
+	public static final String negativeCapacity = "Negative capacity not allowed";
+	public static final String unsuffientCapacity = "Unsuffient capacity";
+	public static final String emptyCart = "Empty cart";
 
 	private ArrayList<Orange> oranges;
 	private int capacity;

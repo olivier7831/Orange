@@ -1,7 +1,7 @@
 package cimpa.td.java;
 
 public class Orange {
-	public static String negativePrice = "Negative price not allowed";
+	public static final String negativePrice = "Negative price not allowed";
 	
 	private double prix;
 	private String origine;

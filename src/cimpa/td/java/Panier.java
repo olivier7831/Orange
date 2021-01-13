@@ -3,21 +3,20 @@ package cimpa.td.java;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
 
 public class Panier {
-	public static final String negativeCapacity = "Negative capacity not allowed";
-	public static final String unsuffientCapacity = "Unsuffient capacity";
-	public static final String emptyCart = "Empty cart";
+	public static final String NEGATIVECAPACITY = "Negative capacity not allowed";
+	public static final String UNSUFFIENTCAPACITY = "Unsuffient capacity";
+	public static final String EMPTYCART = "Empty cart";
 
 	private ArrayList<Orange> oranges;
 	private int capacity;
 
-	public Panier(int capacity) throws UnsupportedOperationException {
+	public Panier(int capacity) throws Exception {
 		super();
 		oranges = new ArrayList<>();
 		if (capacity < 0)
-			throw new UnsupportedOperationException(negativeCapacity);
+			throw new UnsupportedOperationException(NEGATIVECAPACITY);
 		this.capacity = capacity;
 	}
 	
@@ -34,18 +33,18 @@ public class Panier {
 	}
 
 	public boolean estVide() {
-		return (oranges.size() <= 0);
+		return (oranges.isEmpty());
 	}
 
 	@Override
 	public String toString() {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 
 		for (Orange orange : oranges) {
-			result += orange.toString();
+			result.append(orange.toString());
 		}
 
-		return result;
+		return result.toString();
 	}
 
 	@Override
@@ -76,16 +75,16 @@ public class Panier {
 		}
 	}
 
-	public void ajoute(Orange o) throws UnsupportedOperationException {
+	public void ajoute(Orange o) throws Exception {
 		if (estPlein())
-			throw new UnsupportedOperationException(unsuffientCapacity);
+			throw new UnsupportedOperationException(UNSUFFIENTCAPACITY);
 		else
 			oranges.add(o);
 	}
 
-	public void retire() throws UnsupportedOperationException {
+	public void retire() throws Exception {
 		if (estVide())
-			throw new UnsupportedOperationException(emptyCart);
+			throw new UnsupportedOperationException(EMPTYCART);
 		else
 			oranges.remove(oranges.size() - 1);
 	}

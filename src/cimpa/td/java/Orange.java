@@ -1,15 +1,15 @@
 package cimpa.td.java;
 
 public class Orange {
-	public static final String negativePrice = "Negative price not allowed";
-	
+	public static final String NEGATIVEPRICE = "Negative price not allowed";
+
 	private double prix;
 	private String origine;
-	
-	public Orange(double prix, String origine) throws UnsupportedOperationException {
+
+	public Orange(double prix, String origine) throws Exception {
 		super();
-		if (prix<0)
-			throw new UnsupportedOperationException(negativePrice);
+		if (prix < 0)
+			throw new UnsupportedOperationException(NEGATIVEPRICE);
 		this.prix = prix;
 		this.origine = origine;
 	}
@@ -56,5 +56,5 @@ public class Orange {
 			return false;
 		return true;
 	}
-	
+
 }

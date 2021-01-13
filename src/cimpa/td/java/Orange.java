@@ -6,7 +6,7 @@ public class Orange {
 	private double prix;
 	private String origine;
 
-	public Orange(double prix, String origine) throws Exception {
+	public Orange(double prix, String origine) throws UnsupportedOperationException {
 		super();
 		if (prix < 0)
 			throw new UnsupportedOperationException(NEGATIVEPRICE);

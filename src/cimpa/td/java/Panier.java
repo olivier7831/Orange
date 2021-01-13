@@ -12,7 +12,7 @@ public class Panier {
 	private ArrayList<Orange> oranges;
 	private int capacity;
 
-	public Panier(int capacity) throws Exception {
+	public Panier(int capacity) throws UnsupportedOperationException {
 		super();
 		oranges = new ArrayList<>();
 		if (capacity < 0)
@@ -75,14 +75,14 @@ public class Panier {
 		}
 	}
 
-	public void ajoute(Orange o) throws Exception {
+	public void ajoute(Orange o) throws UnsupportedOperationException {
 		if (estPlein())
 			throw new UnsupportedOperationException(UNSUFFIENTCAPACITY);
 		else
 			oranges.add(o);
 	}
 
-	public void retire() throws Exception {
+	public void retire() throws UnsupportedOperationException {
 		if (estVide())
 			throw new UnsupportedOperationException(EMPTYCART);
 		else
